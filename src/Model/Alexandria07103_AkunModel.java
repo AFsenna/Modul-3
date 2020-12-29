@@ -1,11 +1,8 @@
 package Model;
 import Entity.Alexandria07103_AkunEntity;
 import java.util.ArrayList;
-import java.util.Scanner;
-public class Alexandria07103_AkunModel implements Alexandria07103_ModelInterfaces{
+public class Alexandria07103_AkunModel {
     private ArrayList <Alexandria07103_AkunEntity> akunEntityArrayList;
-    private static Scanner input = new Scanner(System.in);
-
     public Alexandria07103_AkunModel(){
         akunEntityArrayList = new ArrayList <Alexandria07103_AkunEntity>();
     }
@@ -14,21 +11,14 @@ public class Alexandria07103_AkunModel implements Alexandria07103_ModelInterface
         akunEntityArrayList.add(penggunaEntity);
     }
     
-    @Override
-    public void view(int index){
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println(" Username      : "+akunEntityArrayList.get(index).getUsername());
-            System.out.println(" Password      : "+akunEntityArrayList.get(index).getPassword());
-            System.out.println(" Email         : "+akunEntityArrayList.get(index).getEmail());
-            System.out.println(" Uang          : "+akunEntityArrayList.get(index).getUangR());
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    }
-    
-    public int cekdata(String nama, String password){
+    public int cekdata(String nama, String password){   
         int loop = 0;
-        while(!akunEntityArrayList.get(loop).getUsername().equals(nama)&&
-                !akunEntityArrayList.get(loop).getPassword().equals(password)){
-            loop++;
+        for (Alexandria07103_AkunEntity akunEntity : akunEntityArrayList) {
+            if (akunEntity.getUsername().equals(nama) && akunEntity.getPassword().equals(password)) {
+                break;
+            } else {
+                loop++;
+            }
         }
         return loop;
     }
@@ -42,14 +32,11 @@ public class Alexandria07103_AkunModel implements Alexandria07103_ModelInterface
     }
     
     public boolean cekempty(boolean cek){
-        while(akunEntityArrayList.isEmpty()){
-            System.out.println("\nBELUM ADA AKUN YANG TERDAFTAR\n");
+        if(akunEntityArrayList.isEmpty()){
             cek=true;
-            break;
         }
-        while(!akunEntityArrayList.isEmpty()){
+        else{
             cek=false;
-            break;
         }
         return cek;
     }

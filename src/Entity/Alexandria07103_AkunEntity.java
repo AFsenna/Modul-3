@@ -3,34 +3,29 @@ public class Alexandria07103_AkunEntity {
     private String email;
     private String username;
     private String password;
-    private int uangR,umur,id,indexAkun;
-    public Alexandria07103_AkunEntity(String nama, String password, int umur, String email,int uangR) {
-        this.username=nama;
-        this.password=password;
-        this.email=email;
-        this.uangR=uangR;
-        this.umur=umur;
-        this.id=id;
+    private int uangR,umur,loop,loopP;
+    public Alexandria07103_AkunEntity() {
     }
 
-    public Alexandria07103_AkunEntity(int indexAkun) {
-        this.indexAkun = indexAkun;
-    }
-
-    public int getIndexAkun() {
-        return indexAkun;
-    }
-
-    public void setIndexAkun(int indexAkun) {
-        this.indexAkun = indexAkun;
+    public Alexandria07103_AkunEntity(int loop, int loopL) {
+        this.loop = loop;
+        this.loopP = loopL;
     }
     
-    public int getId() {
-        return id;
+    public int getLoop() {
+        return loop;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setLoop(int loop) {
+        this.loop = loop;
+    }
+
+    public int getLoopP() {
+        return loopP;
+    }
+
+    public void setLoopP(int loopP) {
+        this.loopP = loopP;
     }
     
     public String getUsername() {

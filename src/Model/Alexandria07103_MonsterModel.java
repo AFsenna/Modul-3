@@ -1,24 +1,13 @@
 package Model;
 import Entity.Alexandria07103_MonsterEntity;
 import java.util.ArrayList;
-public class Alexandria07103_MonsterModel implements Alexandria07103_ModelInterfaces{
+public class Alexandria07103_MonsterModel implements Alexandria07103_CharacterGameInterfaces{
     private ArrayList <Alexandria07103_MonsterEntity> monsterEntityArrayList;
     public Alexandria07103_MonsterModel (){
         monsterEntityArrayList = new ArrayList <Alexandria07103_MonsterEntity>();
     }
     public void insert (Alexandria07103_MonsterEntity arenaEntity){
         monsterEntityArrayList.add(arenaEntity);
-    }
-    @Override
-    public void view(int index){
-        for(Alexandria07103_MonsterEntity monsterEntity : monsterEntityArrayList){
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println(" Nama          : "+monsterEntityArrayList.get(index).getNama());
-            System.out.println(" Power         : "+monsterEntityArrayList.get(index).getPower());
-            System.out.println(" Health        : "+monsterEntityArrayList.get(index).getHealth());
-            System.out.println(" Uang          : "+monsterEntityArrayList.get(index).getUangM());
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        }
     }
     
     public void setstats(){

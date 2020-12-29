@@ -1,16 +1,23 @@
 package Entity;
 public class Alexandria07103_HeroEntity extends Alexandria07103_GameAbstractEntity{
     private String role;
-    private int index,nohero;
+    private int index,nohero,indexAkun;
     public Alexandria07103_HeroEntity(String nama, int health, int power,String role,int nohero) {
         super(nama, health, power);
         this.role = role;
         this.nohero=nohero;
     }  
-    public Alexandria07103_HeroEntity(int index){
+    
+    public Alexandria07103_HeroEntity(int index,int indexAkun){
         this.index=index;
     }
     
+    public int getIndexAkun() {
+        return indexAkun;
+    }
+    public void setIndexAkun(int indexAkun) {
+        this.indexAkun = indexAkun;
+    }
     public int getIndex() {
         return index;
     }
